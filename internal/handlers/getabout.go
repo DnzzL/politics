@@ -5,13 +5,7 @@ import (
 	"net/http"
 )
 
-type AboutHandLer struct{}
-
-func NewAboutHandler() *AboutHandLer {
-	return &AboutHandLer{}
-}
-
-func (h *AboutHandLer) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+func (h *Handler) AboutHandler(w http.ResponseWriter, r *http.Request) {
 	c := templates.About()
 	err := templates.Layout(c, "My website").Render(r.Context(), w)
 

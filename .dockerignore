@@ -1,0 +1,6 @@
+*_templ.txt
+*_templ.go
+tmp/
+bin/
+.vscode/
+*.sqlite

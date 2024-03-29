@@ -1,0 +1,13 @@
+package components
+
+import "goth/.gen/model"
+import "fmt"
+
+templ Pill(query model.Query) {
+	<span
+		class="bg-green-100 text-green-800 text-xs font-medium me-2 px-3 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300 cursor-pointer"
+		hx-get={ fmt.Sprintf("/query/%d", *query.ID) }
+		hx-target="#stances"
+		hx-indicator="#spinner"
+	>{ query.Text }</span>
+}

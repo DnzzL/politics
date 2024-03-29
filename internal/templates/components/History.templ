@@ -1,0 +1,16 @@
+package components
+
+import "goth/.gen/model"
+
+templ History(history []model.Query) {
+	<div class="p-4">
+		<h1 class="mb-4 text-3xl font-bold tracking-tighter sm:text-5xl">Historique</h1>
+		<ul id="history">
+			for _, query := range history {
+				<li>
+					@Pill(query)
+				</li>
+			}
+		</ul>
+	</div>
+}

@@ -1,0 +1,34 @@
+package templates
+
+import (
+	"goth/.gen/model"
+	"goth/internal/types"
+	"goth/internal/templates/components"
+)
+
+templ StanceList(parties []model.Party, stances []model.Stance) {
+	<ul class="flex flex-col gap-6">
+		for _, stance := range stances {
+			for _, party := range parties {
+				if *party.ID == stance.PartyID {
+					@Stance(party, *stance.Text)
+				}
+			}
+		}
+	</ul>
+}
+
+templ StanceListFromHistory(history []types.EnrichedStanced) {
+	<ul class="flex flex-col gap-6">
+		for _, stance := range history {
+			@Stance(stance.Party, *stance.Text)
+		}
+	</ul>
+}
+
+templ StanceListResponse(query model.Query, parties []model.Party, stances []model.Stance) {
+	@StanceList(parties, stances)
+	<li hx-swap-oob="beforeend:#history">
+		@components.Pill(query)
+	</li>
+}

@@ -5,13 +5,7 @@ import (
 	"net/http"
 )
 
-type NotFoundHandler struct{}
-
-func NewNotFoundHandler() *NotFoundHandler {
-	return &NotFoundHandler{}
-}
-
-func (h *NotFoundHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+func (h *Handler) NotFoundHandler(w http.ResponseWriter, r *http.Request) {
 	c := templates.NotFound()
 	err := templates.Layout(c, "Not Found").Render(r.Context(), w)
 

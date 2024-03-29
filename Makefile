@@ -12,12 +12,12 @@ templ-generate:
 
 .PHONY: templ-watch
 templ-watch:
-	templ generate --watch
+	templ generate --watch --proxy=http://localhost:8080
 
 .PHONY: dev
 dev:
-	go build -o ./tmp/$(APP_NAME) ./cmd/$(APP_NAME)/main.go && air
+	go build -o ./tmp ./cmd/main.go && air
 
 .PHONY: build
 build:
-	make tailwind-build && make templ-generate && go build -o ./bin/$(APP_NAME) ./cmd/$(APP_NAME)/main.go
+	go build -o ./bin/$(APP_NAME) ./cmd/$(APP_NAME)/main.go && make tailwind-build && make templ-generate && jet -source=sqlite -dsn="politics.sqlite" -schema=dvds -path=./.gen
