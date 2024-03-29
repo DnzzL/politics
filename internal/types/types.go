@@ -1,6 +1,6 @@
 package types
 
-import "goth/.gen/model"
+import "politics/.gen/model"
 
 type EnrichedStanced struct {
 	model.Stance

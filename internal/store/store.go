@@ -2,10 +2,10 @@ package store
 
 import (
 	"database/sql"
-	"goth/.gen/model"
-	"goth/.gen/table"
-	"goth/internal/types"
 	"log"
+	"politics/.gen/model"
+	"politics/.gen/table"
+	"politics/internal/types"
 
 	. "github.com/go-jet/jet/v2/sqlite"
 )

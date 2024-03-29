@@ -5,18 +5,18 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
-	"goth/internal/handlers"
 	"log"
 	"log/slog"
 	"net/http"
 	"os"
 	"os/signal"
+	"politics/internal/handlers"
 	"syscall"
 	"time"
 
-	m "goth/internal/middleware"
+	m "politics/internal/middleware"
 
-	"goth/internal/store"
+	"politics/internal/store"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"

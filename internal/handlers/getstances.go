@@ -1,11 +1,11 @@
 package handlers
 
 import (
-	"goth/.gen/model"
-	"goth/internal/logic"
-	"goth/internal/templates"
 	"log"
 	"net/http"
+	"politics/.gen/model"
+	"politics/internal/logic"
+	"politics/internal/templates"
 	"sync"
 )
 

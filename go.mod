@@ -1,4 +1,4 @@
-module goth
+module politics
 
 go 1.21.6
 

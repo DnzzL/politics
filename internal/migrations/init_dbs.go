@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"goth/internal/store"
 	"log"
+	"politics/internal/store"
 
 	_ "github.com/mattn/go-sqlite3"
 )

@@ -1,8 +1,8 @@
 package handlers
 
 import (
-	"goth/internal/templates"
 	"net/http"
+	"politics/internal/templates"
 	"strconv"
 
 	"github.com/go-chi/chi/v5"

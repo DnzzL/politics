@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"goth/internal/store"
+	"politics/internal/store"
 )
 
 type Handler struct {

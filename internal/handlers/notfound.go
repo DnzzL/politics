@@ -1,8 +1,8 @@
 package handlers
 
 import (
-	"goth/internal/templates"
 	"net/http"
+	"politics/internal/templates"
 )
 
 func (h *Handler) NotFoundHandler(w http.ResponseWriter, r *http.Request) {
