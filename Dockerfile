@@ -17,11 +17,11 @@ RUN go install github.com/a-h/templ/cmd/templ@latest \
 
 COPY . .
 
+RUN make init-db \
+    && chmod a+rw politics.sqlite
+
 RUN CGO_ENABLED=1 GOOS=linux make build
 
-RUN go run internal/migrations/init_dbs.go \
-    && chmod a+rw politics.sqlite
-    
 
 FROM debian:bookworm
 

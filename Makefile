@@ -14,6 +14,10 @@ templ-generate:
 templ-watch:
 	templ generate --watch --proxy=http://localhost:8080
 
+.PHONY: init-db
+init-db:
+	touch politics.sqlite && go run internal/migrations/init_dbs.go
+
 .PHONY: dev
 dev:
 	go build -o ./tmp ./cmd/main.go && air
