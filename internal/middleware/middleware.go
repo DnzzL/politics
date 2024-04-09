@@ -32,7 +32,10 @@ func CSPMiddleware(next http.Handler) http.Handler {
 		// the hash of the CSS that HTMX injects
 		htmxCSSHash := "sha256-pgn1TCGZX6O77zDvy0oTODMOxemn0oj0LeCnQTRj7Kg="
 
-		cspHeader := fmt.Sprintf("default-src 'self'; script-src 'self' 'nonce-%s' 'nonce-%s'; style-src 'nonce-%s' '%s';", htmxNonce, responseTargetsNonse, twNonce, htmxCSSHash)
+		customDomain := "https://politics.legrand.s"
+		plausibleLink := "https://plausible.legrand.sh"
+
+		cspHeader := fmt.Sprintf("default-src 'self'; script-src 'self' 'nonce-%s' 'nonce-%s'; style-src 'nonce-%s' '%s' %s %s;", htmxNonce, responseTargetsNonse, twNonce, htmxCSSHash, customDomain, plausibleLink)
 		w.Header().Set("Content-Security-Policy", cspHeader)
 
 		next.ServeHTTP(w, r.WithContext(ctx))
