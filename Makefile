@@ -24,4 +24,4 @@ dev:
 
 .PHONY: build
 build:
-	go build -o ./bin/$(APP_NAME) ./cmd/$(APP_NAME)/main.go && make tailwind-build && make templ-generate && jet -source=sqlite -dsn="politics.sqlite" -schema=dvds -path=./.gen
+	make templ-generate  && go build -o ./bin/$(APP_NAME) ./cmd/$(APP_NAME)/main.go && make tailwind-build && jet -source=sqlite -dsn="politics.sqlite" -schema=dvds -path=./.gen
